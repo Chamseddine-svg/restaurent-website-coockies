@@ -1,0 +1,27 @@
+{
+  "name": "restaurent-website-coockies",
+  "version": "1.0.0",
+  "description": "npm init -y --init-type=module     npm install --save-dev webpack webpack-cli     npm install --save-dev html-webpack-plugin //html plugin     npm install --save-dev style-loader css-loader // css loader     npm install --save-dev html-loader //for images     npm install --save-dev webpack-dev-server //live server install     npx webpack serve  //live server start avalable via http://localhost:8080/ by default.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Chamseddine-svg/restaurent-website-coockies.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Chamseddine-svg/restaurent-website-coockies/issues"
+  },
+  "homepage": "https://github.com/Chamseddine-svg/restaurent-website-coockies#readme",
+  "devDependencies": {
+    "html-loader": "^5.1.0",
+    "html-webpack-plugin": "^5.6.8",
+    "webpack": "^5.112.0",
+    "webpack-cli": "^7.2.3",
+    "webpack-dev-server": "^6.1.0"
+  }
+}
