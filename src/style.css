@@ -1,37 +1,154 @@
+/* ---------- Reset & tokens ---------- */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --brown-dark: #4a2c17;
+    --brown: #7b4b2a;
+    --accent: #d98c4a;
+    --card: rgba(255, 250, 244, 0.92);
+    --radius: 16px;
+    --shadow: 0 8px 24px rgba(74, 44, 23, 0.15);
+}
+
+/* ---------- Base ---------- */
 body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--brown-dark);
+
     background-image: url("./img/bag.webp");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    background-color: #f3e3d3; /* fallback while the image loads */
 }
 
+/* ---------- Header / nav ---------- */
 header {
     display: flex;
     justify-content: center;
-    align-items: center;
-    padding: 20px;
+    padding: 24px 16px;
 }
 
 nav {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
-    gap: 30px;
+    gap: 6px;
+    padding: 8px;
+    background: rgba(255, 250, 244, 0.85);
+    border-radius: 999px;
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(6px);
 }
 
 nav button {
-    padding: 10px 20px;
+    font: inherit;
+    font-weight: 600;
+    color: var(--brown);
+    background: transparent;
     border: none;
-    border-radius: 20px;
+    border-radius: 999px;
+    padding: 10px 22px;
     cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.1s ease;
 }
 
+nav button:hover {
+    background: var(--accent);
+    color: #fff;
+}
+
+nav button:active {
+    transform: scale(0.97);
+}
+
+nav button:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 2px;
+}
+
+/* ---------- Content card ---------- */
 #Content {
+    width: min(90%, 760px);
+    margin: 0 auto 60px;
+    padding: 40px 32px;
+
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     gap: 20px;
     text-align: center;
+
+    background: var(--card);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(4px);
+
+    animation: fade-in 0.35s ease both;
+}
+
+@keyframes fade-in {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: none; }
+}
+
+/* ---------- Typography ---------- */
+h2 {
+    margin: 0;
+    font-size: clamp(1.5rem, 4vw, 2.1rem);
+    line-height: 1.25;
+    color: var(--brown-dark);
+}
+
+h3 {
+    margin: 12px 0 0;
+    font-size: 1.15rem;
+    color: var(--brown);
+}
+
+p {
+    margin: 0;
+    max-width: 60ch;
+    color: #5c4028;
+}
+
+/* ---------- Images ---------- */
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(74, 44, 23, 0.18);
+}
+
+#Content img {
+    width: 100%;
+    max-width: 420px;
+}
+
+/* ---------- Small screens ---------- */
+@media (max-width: 480px) {
+    nav button {
+        padding: 8px 14px;
+        font-size: 0.95rem;
+    }
+
+    #Content {
+        padding: 28px 20px;
+        margin-bottom: 40px;
+    }
+}
+
+/* ---------- Respect reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+    #Content { animation: none; }
+    nav button { transition: none; }
 }
