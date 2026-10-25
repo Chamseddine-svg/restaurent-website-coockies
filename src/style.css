@@ -27,7 +27,7 @@ nav button {
     cursor: pointer;
 }
 
-#container {
+#Content {
     display: flex;
     flex-direction: column;
     align-items: center;

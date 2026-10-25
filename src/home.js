@@ -1,6 +1,6 @@
 export default function loadHomePage() {
     
-    const container = document.getElementById("container")
+    const container = document.getElementById("Content")
 
     container.replaceChildren();
 
