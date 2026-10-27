@@ -8,4 +8,4 @@
     npx webpack serve  //live server start avalable via http://localhost:8080/ by default.
 
 #project live at :
-    http://chamseddine-svg.github.io/restaurent-website-coockies/git 
+    https://chamseddine-svg.github.io/restaurent-website-coockies/
